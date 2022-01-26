@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+  <script>
+    /**
+     * Algorithm
+     * 1. create a calculator accepts 3 arguments (num, num, operator)
+     * 1.1. if not any argument (return arguments are mandatory)
+     * 2. convert number in string by ParseInt Method and store in variable output
+     * 2.1. if output is NaN (return Enter proper Value)
+     * 3. calculate the values using input operator
+     * 4. return the result
+     */
+
+    function calculator(num1, num2, operator) {
+      if (!num1 || !num2 || !operator) {
+        return "Arguments are mandatory";
+      }
+      const number1 = parseInt(num1);
+      const number2 = parseInt(num2);
+      if (isNaN(number1) || isNaN(number2)) {
+        return "Enter proper Value";
+      }
+      //   if (operator === "+") {
+      //     return number1 + number2;
+      //   } else if (operator === "-") {
+      //     return number1 - number2;
+      //   } else if (operator === "*") {
+      //     return number1 * number2;
+      //   } else if (operator === "/") {
+      //     return number1 / number2;
+      //   }
+      //   return "Enter a valid operator";
+      switch (operator) {
+        case "+":
+          return number1 + number2;
+        case "-":
+          return number1 - number2;
+        case "*":
+          return number1 * number2;
+        case "/":
+          return number1 / number2;
+      }
+      return "Enter a valid operator";
+    }
+    console.log(calculator(10, 5, "+"));
+  </script>
+</html>
